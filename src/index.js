@@ -18,7 +18,7 @@ class InterlinearText extends React.Component {
 const InterlinearWord = (props) => (
     <div className=".InterlinearText" style={{display: 'inline'}}>
         <span style={{display: 'inline-flex', flexFlow: 'column', alignItems: 'center'}}>
-            <div>{props.iw}</div>
+            <div style={{direction: 'rtl'}}>{props.iw}</div>
             <div>{props.en}</div>
         </span>
         {props.sentencePosition === 1 ? '' : (<span style={{verticalAlign: '-1rem'}}> {'↞'} </span>)}
