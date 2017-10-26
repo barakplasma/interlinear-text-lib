@@ -1,6 +1,6 @@
 When you want to display interlinear text like so:
 
-![Image of Interlinear Text](./examples/Screen Shot 2017-10-27 at 1.06.26.png)
+![Image of Interlinear Text](./examples/screenshot.png)
 
 English sentence: Hello World! My name is Michael.
 Hebrew sentence: שלום עולם! שם שלי הוא מיכאל.
