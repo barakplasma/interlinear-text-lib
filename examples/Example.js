@@ -10,10 +10,6 @@ class Example extends React.Component {
         }
     }
 
-    componentDidMount() {
-        console.log('test');
-    }
-
     render() {
         return (
             <div>
