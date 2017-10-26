@@ -17,6 +17,7 @@ class InterlinearText extends React.Component {
                     <div>{this.props.en}</div>
                     <div>{this.props.iw}</div>
                 </span>
+                {this.props.sentencePosition === 1 ? '' : (<span style={{verticalAlign: '-.5rem'}}> > </span>)}
             </div>
         )
     }
@@ -24,7 +25,8 @@ class InterlinearText extends React.Component {
 
 InterlinearText.propTypes = {
     en: PropTypes.string,
-    iw: PropTypes.string
+    iw: PropTypes.string,
+    sentencePosition: PropTypes.number
 }
 
 export default InterlinearText;

@@ -6,7 +6,7 @@ class Example extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sentence: [{en: 'Hello', iw: 'שלום'},{en: 'World!', iw: '!אולם'}]
+            sentence: [{en: 'Hello', iw: 'שלום'},{en: 'World!', iw: '!אולם'},{en: 'My name', iw: 'שם שלי'}]
         }
     }
 
@@ -17,7 +17,7 @@ class Example extends React.Component {
     render() {
         return (
             <div>
-                {this.state.sentence.map(word=><InterlinearText en={word.en} iw={word.iw} />)}
+                {this.state.sentence.map((word, index)=><InterlinearText en={word.en} iw={word.iw} sentencePosition={(index+1) / this.state.sentence.length}/>)}
             </div>
         )
     }
