@@ -17,7 +17,7 @@ class Example extends React.Component {
     render() {
         return (
             <div>
-                {this.state.sentence.map((word, index)=><InterlinearText en={word.en} iw={word.iw} sentencePosition={(index+1) / this.state.sentence.length}/>)}
+                <InterlinearText sentence={this.state.sentence} />
             </div>
         )
     }
