@@ -10,6 +10,7 @@ import InterlinearSentence from 'interlinear-text-lib';
 ```
 
 English sentence: Hello World! My name is Michael.
+
 Hebrew sentence: שלום עולם! שם שלי הוא מיכאל.
 
 Here's how you use the component
