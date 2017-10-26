@@ -11,17 +11,17 @@ class InterlinearText extends React.Component {
     }
 
     render() {
-        return <span>{this.props.sentence.map((word, index) => (<InterlinearWord en={word.en} iw={word.iw} sentencePosition={(index+1) / this.props.sentence.length} key={index}/>))}</span>
+        return <span>{this.props.sentence.reverse().map((word, index) => (<InterlinearWord en={word.en} iw={word.iw} sentencePosition={(index+1) / this.props.sentence.length} key={index}/>))}</span>
     }
 }
 
 const InterlinearWord = (props) => (
     <div className=".InterlinearText" style={{display: 'inline'}}>
         <span style={{display: 'inline-flex', flexFlow: 'column', alignItems: 'center'}}>
-            <div>{props.en}</div>
             <div>{props.iw}</div>
+            <div>{props.en}</div>
         </span>
-        {props.sentencePosition === 1 ? '' : (<span style={{verticalAlign: '-.5rem'}}> > </span>)}
+        {props.sentencePosition === 1 ? '' : (<span style={{verticalAlign: '-1rem'}}> {'↞'} </span>)}
     </div>
 )
 
