@@ -13,7 +13,7 @@
   , "url" : "https://github.com/barakplasma/interlinear-text-lib.git"
   },
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "scripts": {
     "build": "webpack --config webpack.config.babel.js",
     "release": "webpack --p --config webpack.config.babel.js",
