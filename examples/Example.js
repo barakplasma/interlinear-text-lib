@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InterlinearText from '../src/index';
+import InterlinearSentence from '../src/index';
 
 class Example extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class Example extends React.Component {
     render() {
         return (
             <div>
-                <InterlinearText sentence={this.state.sentence} />
+                <InterlinearSentence sentence={this.state.sentence} />
 
                 <p>
                     English sentence: {this.state.sentence.map(word=>word.en).join(' ')}

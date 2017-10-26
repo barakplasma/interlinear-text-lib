@@ -1,7 +1,7 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 
-class InterlinearText extends React.Component {
+class InterlinearSentence extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -11,12 +11,12 @@ class InterlinearText extends React.Component {
     }
 
     render() {
-        return <span>{this.props.sentence.reverse().map((word, index) => (<InterlinearWord en={word.en} iw={word.iw} sentencePosition={(index+1) / this.props.sentence.length} key={index}/>))}</span>
+        return <span className=".InterlinearSentence">{this.props.sentence.reverse().map((word, index) => (<InterlinearWord en={word.en} iw={word.iw} sentencePosition={(index+1) / this.props.sentence.length} key={index}/>))}</span>
     }
 }
 
 const InterlinearWord = (props) => (
-    <div className=".InterlinearText" style={{display: 'inline'}}>
+    <div className=".InterlinearWord" style={{display: 'inline'}}>
         <span style={{display: 'inline-flex', flexFlow: 'column', alignItems: 'center'}}>
             <div style={{direction: 'rtl'}}>{props.iw}</div>
             <div>{props.en}</div>
@@ -25,7 +25,7 @@ const InterlinearWord = (props) => (
     </div>
 )
 
-InterlinearText.propTypes = {
+InterlinearSentence.propTypes = {
     sentence: PropTypes.array
 }
 
@@ -35,4 +35,4 @@ InterlinearWord.propTypes = {
     sentencePosition: PropTypes.number
 }
 
-export default InterlinearText;
+export default InterlinearSentence;
