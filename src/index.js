@@ -17,7 +17,7 @@ class InterlinearText extends React.Component {
 
 const InterlinearWord = (props) => (
     <div className=".InterlinearText" style={{display: 'inline'}}>
-        <span style={{display: 'inline-flex', flexFlow: 'column'}}>
+        <span style={{display: 'inline-flex', flexFlow: 'column', alignItems: 'center'}}>
             <div>{props.en}</div>
             <div>{props.iw}</div>
         </span>

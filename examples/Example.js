@@ -6,7 +6,7 @@ class Example extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sentence: [{en: 'Hello', iw: 'שלום'},{en: 'World!', iw: '!אולם'},{en: 'My name', iw: 'שם שלי'}]
+            sentence: [{en: 'Hello', iw: 'שלום'},{en: 'World!', iw: '!אולם'},{en: 'My name', iw: 'שם שלי'},{en: 'is', iw: 'הוא'},{en: 'Michael.', iw: '.מיכאל'}]
         }
     }
 
