@@ -14,7 +14,7 @@ class Example extends React.Component {
         return (
             <div>
                 <InterlinearSentence sentence={this.state.sentence} />
-
+                <br /><br />
                 <p>
                     English sentence: {this.state.sentence.map(word=>word.en).join(' ')}
                 </p>
@@ -23,6 +23,20 @@ class Example extends React.Component {
                     Hebrew sentence: 
                     {` ${this.state.sentence.map(word=>word.iw).join(' ')}`}
                 </p>
+                <div>
+                    <p>
+                        Here's how you use the component
+                    </p>
+                    {`<InterlinearSentence sentence={wordObjectArray} />`}
+                </div>
+                <div>
+                    <p>   
+                        Here's an example of the JSON needed to build the sentence above: 
+                    </p> 
+                    <div>
+                        {JSON.stringify(this.state.sentence)}
+                    </div>
+                </div>
             </div>
         )
     }
