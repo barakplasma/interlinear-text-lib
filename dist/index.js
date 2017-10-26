@@ -4,19 +4,21 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["react-npm-component-boilerplate"] = factory();
+		exports["interlinear-text-lib"] = factory();
 	else
-		root["react-npm-component-boilerplate"] = factory();
+		root["interlinear-text-lib"] = factory();
 })(this, function() {
-return webpackJsonpreact_npm_component_boilerplate([1],{
+return webpackJsonpinterlinear_text_lib([1],{
 
-/***/ 19:
+/***/ 24:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25,68 +27,80 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// Demo component
-// this is only example component
 
 
 
-var MyComponent = function (_React$Component) {
-    _inherits(MyComponent, _React$Component);
+var InterlinearSentence = function (_React$Component) {
+    _inherits(InterlinearSentence, _React$Component);
 
-    function MyComponent(props) {
-        _classCallCheck(this, MyComponent);
+    function InterlinearSentence(props) {
+        _classCallCheck(this, InterlinearSentence);
 
-        return _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this, props));
+        return _possibleConstructorReturn(this, (InterlinearSentence.__proto__ || Object.getPrototypeOf(InterlinearSentence)).call(this, props));
     }
 
-    _createClass(MyComponent, [{
-        key: "componentDidMount",
+    _createClass(InterlinearSentence, [{
+        key: 'componentDidMount',
         value: function componentDidMount() {}
     }, {
-        key: "render",
+        key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "my-component" },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "i",
-                    { className: "icon-test" },
-                    "One"
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "i",
-                    { className: "icon-test" },
-                    "Two"
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "i",
-                    { className: "icon-test" },
-                    "Two"
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "i",
-                    { className: "icon-test" },
-                    "Two"
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "i",
-                    { className: "icon-test" },
-                    "Three"
-                )
+                'span',
+                { className: '.InterlinearSentence' },
+                this.props.sentence.reverse().map(function (word, index) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(InterlinearWord, { en: word.en, iw: word.iw, sentencePosition: (index + 1) / _this2.props.sentence.length, key: index });
+                })
             );
         }
     }]);
 
-    return MyComponent;
+    return InterlinearSentence;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (MyComponent);
+var InterlinearWord = function InterlinearWord(props) {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: '.InterlinearWord', style: { display: 'inline' } },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { style: { display: 'inline-flex', flexFlow: 'column', alignItems: 'center' } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { style: { direction: 'rtl' } },
+                props.iw
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                null,
+                props.en
+            )
+        ),
+        props.sentencePosition === 1 ? '' : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { style: { verticalAlign: '-1rem' } },
+            ' ',
+            '↞',
+            ' '
+        )
+    );
+};
+
+InterlinearSentence.propTypes = {
+    sentence: __WEBPACK_IMPORTED_MODULE_1_prop_types__["PropTypes"].array
+};
+
+InterlinearWord.propTypes = {
+    en: __WEBPACK_IMPORTED_MODULE_1_prop_types__["PropTypes"].string,
+    iw: __WEBPACK_IMPORTED_MODULE_1_prop_types__["PropTypes"].string,
+    sentencePosition: __WEBPACK_IMPORTED_MODULE_1_prop_types__["PropTypes"].number
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (InterlinearSentence);
 
 /***/ })
 
-},[19]);
+},[24]);
 });
