@@ -13,6 +13,8 @@ English sentence: Hello World! My name is Michael.
 
 Hebrew sentence: שלום עולם! שם שלי הוא מיכאל.
 
+Live Demo available at https://stackblitz.com/edit/react-nyhskt
+
 Here's how you use the component
 
 ```JSX
